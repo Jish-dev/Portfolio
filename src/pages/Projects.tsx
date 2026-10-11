@@ -42,7 +42,7 @@ export default function Projects() {
         "Responsive Design",
       ],
       image: "/exp-kl.png",
-      live: "#",
+      live: "https://jish-dev.github.io/Explore-kerala/",
       github: "#",
     },
 
@@ -63,7 +63,7 @@ export default function Projects() {
         "Responsive UI",
       ],
       image: "/openwallet.png",
-      live: "#",
+      live: "https://jish-dev.github.io/openwallet/",
       github: "#",
     },
 
@@ -90,7 +90,7 @@ export default function Projects() {
 
     {
       number: "04",
-      title: "EduTec",
+      title: "EduTech",
       category: "EDUCATION",
       type: "Full Stack System",
       year: "2026",
@@ -106,7 +106,7 @@ export default function Projects() {
         "JWT",
       ],
       image: "/edutec.png",
-      live: "#",
+      live: "https://jish-dev.github.io/EduTech/",
       github: "#",
     },
 
@@ -127,7 +127,7 @@ export default function Projects() {
         "Responsive UI",
       ],
       image: "/frozyfresh.png",
-      live: "#",
+      live: "https://frozyfresh.netlify.app/",
       github: "#",
     },
 
@@ -146,7 +146,7 @@ export default function Projects() {
         "TypeScript",
       ],
       image: "/ff-admin.png",
-      live: "#",
+      live: "https://frozyadmin.netlify.app/",
       github: "#",
     },
 
@@ -170,6 +170,25 @@ export default function Projects() {
       live: "#",
       github: "#",
     },
+    {
+      number: "08",
+      title: "Alpha Electronics",
+      category: "BRAND" ,
+      type: "Electronics",
+      year: "2026",
+      status: "REACT PROJECT",
+      description:
+        "A modern e-commerce experience built to showcase electronic products, simplify product discovery, and deliver a seamless online shopping experience through a clean, responsive, and user-friendly interface.",
+      technologies: [
+        "REACT",
+        "Tailwind CSS",
+        "TypeScript",
+        "Responsive UI",
+      ],
+      image: "/alpha.png",
+      live: "#",
+      github: "#",
+    },
   ];
 
   // ============================================================
@@ -190,8 +209,7 @@ export default function Projects() {
   // ============================================================
 
   useEffect(() => {
-    const elements =
-      sectionRef.current?.querySelectorAll("[data-project]");
+    const elements = sectionRef.current?.querySelectorAll("[data-project]");
 
     if (!elements) return;
 
@@ -200,14 +218,10 @@ export default function Projects() {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
 
-          const index = Number(
-            (entry.target as HTMLElement).dataset.project
-          );
+          const index = Number((entry.target as HTMLElement).dataset.project);
 
           setVisibleProjects((current) =>
-            current.includes(index)
-              ? current
-              : [...current, index]
+            current.includes(index) ? current : [...current, index]
           );
         });
       },
@@ -226,71 +240,38 @@ export default function Projects() {
     <section
       ref={sectionRef}
       id="projects"
-      className="relative overflow-hidden bg-[#06090E] py-28 text-white md:py-36"
+      className="relative overflow-hidden bg-slate-50 py-24 text-slate-900 md:py-32"
     >
-      {/* =====================================================
-          BACKGROUND GRID
-      ====================================================== */}
-
-      <div
-        className="pointer-events-none absolute opacity-[0.035]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
-      />
-
-      {/* =====================================================
-          BACKGROUND GLOWS
-      ====================================================== */}
-
-      <div className="pointer-events-none absolute left-[-15%] top-[10%] h-[550px] w-[550px] rounded-full bg-[#bc9851]/[0.05] blur-[140px]" />
-
-      <div className="pointer-events-none absolute right-[-15%] top-[45%] h-[550px] w-[550px] rounded-full bg-[#bc9851]/[0.04] blur-[140px]" />
-
-      <div className="pointer-events-none absolute bottom-[-15%] left-[25%] h-[500px] w-[500px] rounded-full bg-[#bc9851]/[0.025] blur-[140px]" />
 
       {/* =====================================================
           MAIN CONTAINER
       ====================================================== */}
-
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 lg:px-16">
+      <div className="relative z-10 mx-auto max-w-[1300px] px-6 md:px-10 lg:px-16">
 
         {/* =================================================
             HEADER
         ================================================== */}
-
-        <div className="mb-24 grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="mb-20 grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-8">
-            <div className="mb-7 flex items-center gap-4">
-              <span className="h-px w-12 bg-[#bc9851]" />
-
+            <div className="mb-6 flex items-center gap-4">
+              <span className="h-px w-12 bg-[#bc9851]/50" />
               <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-[#bc9851]">
                 Projects / Portfolio
               </span>
             </div>
 
-            <h2 className="max-w-5xl text-5xl font-bold leading-[0.95] tracking-[-0.055em] text-white md:text-7xl lg:text-8xl">
-              Thinking beyond
-              <br />
-
-              <span className="bg-gradient-to-r from-[#bc9851] via-[#d0b071] to-[#bc9851] bg-clip-text text-transparent">
-                concepts.
-              </span>
+            <h2 className="text-5xl font-bold leading-tight tracking-tight text-slate-900 md:text-7xl">
+              Thinking beyond <br />
+              <span className="text-[#bc9851]">concepts.</span>
             </h2>
           </div>
 
           <div className="flex items-end lg:col-span-4">
-            <div className="border-l border-white/10 pl-6">
-              <p className="font-mono text-[13px] uppercase tracking-[0.25em] text-gray-500">
-                03 / Projects
-              </p>
-
-              <p className="mt-4 max-w-sm text-sm leading-7 text-gray-400 md:text-base">
-                A collection of websites, applications and digital
-                products developed through technology, design and
-                practical problem solving.
+            <div className="border-l-2 border-slate-200 pl-6">
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600 md:text-base">
+                A collection of websites, applications and digital products
+                developed through technology, design and practical problem
+                solving.
               </p>
             </div>
           </div>
@@ -299,25 +280,23 @@ export default function Projects() {
         {/* =================================================
             INTRO
         ================================================== */}
-
-        <div className="mb-28 grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="mb-24 grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <p className="font-mono text-[12px] uppercase tracking-[0.25em] text-gray-400">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-slate-500">
               Portfolio / 2026
             </p>
-
-            <div className="mt-7 border-l border-[#bc9851]/40 pl-5">
-              <p className="text-sm leading-7 text-gray-300">
-                Each project represents a different problem, idea or
-                digital direction explored through development.
+            <div className="mt-6 border-l-2 border-[#bc9851]/30 pl-5">
+              <p className="text-sm leading-relaxed text-slate-600">
+                Each project represents a different problem, idea or digital
+                direction explored through development.
               </p>
             </div>
           </div>
 
           <div className="lg:col-span-8">
-            <h3 className="max-w-5xl text-2xl font-medium leading-[1.4] tracking-[-0.025em] text-white md:text-3xl lg:text-4xl">
+            <h3 className="max-w-4xl text-2xl font-medium leading-relaxed tracking-tight text-slate-900 md:text-3xl">
               From concept to implementation,
-              <span className="text-[#bc9851]">
+              <span className="font-bold text-[#bc9851]">
                 {" "}
                 I build digital experiences
               </span>{" "}
@@ -326,45 +305,32 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* =================================================
-            PROJECT INDEX
-        ================================================== */}
 
-        <div className="mb-28 border-y border-white/10 py-3">
-          <div className="grid grid-cols-2 md:grid-cols-5">
+        <div className="mb-24 border-y border-slate-200 py-4">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {projects.map((project, index) => (
               <a
                 key={project.number}
                 href={`#project-${project.number}`}
-                className={`group relative p-5 transition-all duration-300 hover:bg-white/[0.02] sm:p-6 ${
-                  index !== projects.length - 1
-                    ? "border-r border-white/10"
-                    : ""
-                }`}
+                className={`group relative p-5 transition-all duration-300 hover:bg-slate-100 sm:p-6 ${index !== projects.length - 1 ? "border-slate-200 md:border-r" : ""
+                  }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-[#bc9851] sm:text-xs">
+                  <span className="font-mono text-[10px] tracking-[0.2em] font-bold text-[#bc9851] sm:text-xs">
                     {project.number}
                   </span>
-
-                  <span className="text-sm text-gray-700 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#bc9851]">
+                  <span className="text-sm text-slate-400 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#bc9851]">
                     ↗
                   </span>
                 </div>
-
-                <p className="mt-5 truncate text-xs font-medium uppercase tracking-[0.12em] text-gray-400 transition-colors group-hover:text-white sm:text-sm">
+                <p className="mt-5 truncate text-xs font-bold uppercase tracking-[0.1em] text-slate-500 transition-colors group-hover:text-slate-900">
                   {project.title}
                 </p>
-
-                <span className="absolute bottom-0 left-0 h-px w-0 bg-[#bc9851] transition-all duration-500 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#bc9851] transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
           </div>
         </div>
-
-        {/* =================================================
-            PROJECTS
-        ================================================== */}
 
         <div className="space-y-28 lg:space-y-36">
           {projects.map((project, index) => {
@@ -376,163 +342,111 @@ export default function Projects() {
                 key={project.number}
                 id={`project-${project.number}`}
                 data-project={index}
-                className={`group transition-all duration-1000 ease-out ${
-                  isVisible
+                className={`group transition-all duration-1000 ease-out ${isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-16 opacity-0"
-                }`}
+                  }`}
                 style={{
                   transitionDelay: `${(index % 3) * 120}ms`,
                 }}
               >
-                {/* =================================================
-                    PROJECT META
-                ================================================== */}
-
-                <div className="mb-7 flex items-center justify-between border-b border-white/10 pb-4">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-gray-600 sm:text-xs">
+                {/* PROJECT META */}
+                <div className="mb-8 flex items-center justify-between border-b border-slate-200 pb-4">
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 sm:text-xs">
                     Project / {project.number}
                   </span>
-
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-gray-600 sm:text-xs">
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 sm:text-xs">
                     {project.year}
                   </span>
                 </div>
 
-                {/* =================================================
-                    PROJECT GRID
-                ================================================== */}
-
                 <div className="grid min-w-0 grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
 
-                  {/* =================================================
-                      IMAGE
-                  ================================================== */}
-
+                  {/* IMAGE */}
                   <div
-                    className={`min-w-0 lg:col-span-7 ${
-                      isReversed ? "lg:order-2" : "lg:order-1"
-                    }`}
+                    className={`min-w-0 lg:col-span-7 ${isReversed ? "lg:order-2" : "lg:order-1"
+                      }`}
                   >
-                    <div className="relative w-full max-w-full overflow-hidden rounded-3xl border border-white/10 bg-[#080C12] shadow-2xl shadow-black/20">
-
-                      {/* IMAGE */}
+                    <div className="relative w-full max-w-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/60">
 
                       {project.image ? (
                         <img
                           src={project.image}
                           alt={`${project.title} project preview`}
-                          className="block h-auto w-full max-w-full object-contain object-center opacity-85 grayscale-[10%] transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+                          className="block h-auto w-full max-w-full object-contain object-center transition-transform duration-700 ease-out "
                           onError={(event) => {
                             event.currentTarget.style.display = "none";
                           }}
                         />
                       ) : (
-                        <div className="flex min-h-[320px] items-center justify-center">
+                        <div className="flex min-h-[320px] items-center justify-center bg-slate-50">
                           <div className="text-center">
-                            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-[#bc9851]/30 bg-[#bc9851]/[0.03] transition-all duration-500 group-hover:border-[#bc9851]/60 group-hover:bg-[#bc9851]/[0.06]">
-                              <span className="text-3xl font-light text-[#bc9851]">
-                                +
-                              </span>
+                            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-[#bc9851]/20 bg-amber-50 transition-all duration-500 group-hover:border[#bc9851]/40 group-hover:bg-amber-100">
+                              <span className="text-3xl font-light text-[#bc9851]">+</span>
                             </div>
-
-                            <p className="mt-6 font-mono text-[9px] uppercase tracking-[0.3em] text-gray-500 sm:text-[10px]">
+                            <p className="mt-6 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
                               Add Project Image
                             </p>
-
-                            <p className="mt-2 font-mono text-[8px] uppercase tracking-[0.2em] text-gray-700">
+                            <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.2em] text-slate-400">
                               /public/projects/
                             </p>
                           </div>
                         </div>
                       )}
 
-                      {/* DARK GRADIENT */}
-
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06090E]/80 via-transparent to-transparent" />
-
-                      {/* GOLD OVERLAY */}
-
-                      <div className="pointer-events-none absolute inset-0 bg-[#bc9851]/[0.015] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                      {/* TOP LEFT NUMBER */}
-
+                      {/* LIGHT FROSTED OVERLAYS */}
                       <div className="absolute left-5 top-5 sm:left-6 sm:top-6">
-                        <span className="rounded-full border border-white/10 bg-black/30 px-3 py-2 font-mono text-[9px] tracking-[0.25em] text-white/50 backdrop-blur-md">
+                        <span className="rounded-full border border-slate-200 bg-white/90 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-slate-700 backdrop-blur-md shadow-sm">
                           {project.number}
                         </span>
                       </div>
 
-                      {/* TOP RIGHT CATEGORY */}
-
                       <div className="absolute right-5 top-5 sm:right-6 sm:top-6">
-                        <span className="rounded-full border border-white/10 bg-black/30 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.2em] text-white/60 backdrop-blur-md">
+                        <span className="rounded-full border border-slate-200 bg-white/90 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-slate-700 backdrop-blur-md shadow-sm">
                           {project.category}
-                        </span>
-                      </div>
-
-                      {/* BOTTOM INFO */}
-
-                      <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between sm:bottom-6 sm:left-6 sm:right-6">
-                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/45 sm:text-[10px]">
-                          {project.type}
-                        </span>
-
-                        <span className="text-lg text-white/30 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#bc9851]">
-                          ↗
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  {/* =================================================
-                      CONTENT
-                  ================================================== */}
-
+                  {/* CONTENT */}
                   <div
-                    className={`min-w-0 lg:col-span-5 ${
-                      isReversed ? "lg:order-1" : "lg:order-2"
-                    }`}
+                    className={`min-w-0 lg:col-span-5 ${isReversed ? "lg:order-1" : "lg:order-2"
+                      }`}
                   >
-                    <div className="relative border-l border-white/10 pl-6 transition-colors duration-500 group-hover:border-[#bc9851]/50 lg:pl-8">
+                    <div className="relative border-l-2 border-slate-200 pl-6 transition-colors duration-500 group-hover:border-[#bc9851]/40 lg:pl-8">
 
                       {/* STATUS */}
-
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-[#bc9851] sm:text-[10px]">
+                        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#bc9851] sm:text-xs">
                           {project.status}
                         </span>
-
-                        <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-gray-700 sm:text-[10px]">
+                        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400 sm:text-xs">
                           {project.year}
                         </span>
                       </div>
 
                       {/* TITLE */}
-
-                      <h3 className="mt-6 text-4xl font-bold tracking-[-0.055em] text-white transition-colors duration-500 group-hover:text-[#bc9851] sm:text-5xl md:text-6xl">
+                      <h3 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 transition-colors duration-500 group-hover:text-[#bc9851] sm:text-5xl">
                         {project.title}
                       </h3>
 
                       {/* TYPE */}
-
-                      <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.28em] text-gray-600 sm:text-[10px]">
+                      <p className="mt-3 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
                         {project.category} / {project.type}
                       </p>
 
                       {/* DESCRIPTION */}
-
-                      <p className="mt-7 max-w-xl text-sm leading-7 text-gray-400 sm:text-base sm:leading-8">
+                      <p className="mt-6 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
                         {project.description}
                       </p>
 
                       {/* TECHNOLOGIES */}
-
                       <div className="mt-8 flex flex-wrap gap-2">
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="rounded-full border border-white/10 bg-white/[0.015] px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-gray-500 transition-all duration-300 group-hover:border-[#bc9851]/25 group-hover:text-gray-300 sm:text-[10px]"
+                            className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-slate-500 transition-all duration-300 group-hover:border-[#bc9851]/30 group-hover:bg-amber-50 group-hover:text-[#bc9851]"
                           >
                             {tech}
                           </span>
@@ -540,150 +454,117 @@ export default function Projects() {
                       </div>
 
                       {/* LINK */}
-
-                      <div className="mt-9">
+                      <div className="mt-10">
                         <a
                           href={project.live || "#"}
                           target={
-                            project.live && project.live !== "#"
-                              ? "_blank"
-                              : undefined
+                            project.live && project.live !== "#" ? "_blank" : undefined
                           }
                           rel={
                             project.live && project.live !== "#"
                               ? "noopener noreferrer"
                               : undefined
                           }
-                          className="group/link inline-flex items-center gap-4 rounded-full border border-white/10 bg-white/[0.02] px-5 py-3 font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-gray-400 transition-all duration-300 hover:border-[#bc9851]/50 hover:bg-[#bc9851]/[0.05] hover:text-[#bc9851] sm:text-xs"
+                          className="group/link inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-slate-600 shadow-sm transition-all duration-300 hover:border-[#bc9851]/40 hover:bg-amber-50 hover:text-[#bc9851]"
                         >
                           View Project
 
-                          <span className="transition-transform duration-300 group-hover/link:-translate-y-1 group-hover/link:translate-x-1">
-                            ↗
-                          </span>
                         </a>
                       </div>
                     </div>
                   </div>
+
                 </div>
               </article>
             );
           })}
         </div>
 
-        {/* =================================================
-            PROJECT SUMMARY
-        ================================================== */}
-
-        <div className="mb-28 mt-32 border-y border-white/10 py-14 lg:mt-40">
+        <div className="mb-24 mt-32 border-y border-slate-200 py-16 lg:mt-40">
           <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-[#bc9851]">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[#bc9851]">
                 Portfolio / Overview
               </p>
-
-              <h3 className="mt-5 text-4xl font-bold tracking-[-0.04em] text-white md:text-5xl">
-                Built through
-                <br />
-
-                <span className="text-[#bc9851]">
-                  code & creativity.
-                </span>
+              <h3 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
+                Built through <br />
+                <span className="text-[#bc9851]">code & creativity.</span>
               </h3>
             </div>
 
             <div className="flex items-end lg:col-span-5">
-              <p className="max-w-lg text-sm leading-8 text-gray-500 md:text-base">
-                A growing collection of development work, concepts and
-                practical digital products built across different
-                domains.
+              <p className="max-w-lg text-sm leading-relaxed text-slate-600 md:text-base">
+                A growing collection of development work, concepts and practical
+                digital products built across different domains.
               </p>
             </div>
           </div>
 
           {/* STATS */}
-
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-4">
-
-            <div className="bg-[#080C12] p-7 transition-colors duration-300 hover:bg-[#0A0F16]">
-              <p className="text-4xl font-bold tracking-[-0.05em] text-[#bc9851] md:text-5xl">
-                07
+          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 md:grid-cols-4">
+            <div className="bg-white p-8 transition-colors duration-300 hover:bg-slate-50">
+              <p className="text-4xl font-bold tracking-tight text-[#bc9851] md:text-5xl">
+                08
               </p>
-
-              <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.3em] text-gray-500 sm:text-[10px]">
+              <p className="mt-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
                 Projects
               </p>
             </div>
 
-            <div className="bg-[#080C12] p-7 transition-colors duration-300 hover:bg-[#0A0F16]">
-              <p className="text-4xl font-bold tracking-[-0.05em] text-white md:text-5xl">
+            <div className="bg-white p-8 transition-colors duration-300 hover:bg-slate-50">
+              <p className="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
                 MERN
               </p>
-
-              <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.3em] text-gray-500 sm:text-[10px]">
+              <p className="mt-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
                 Full Stack
               </p>
             </div>
 
-            <div className="bg-[#080C12] p-7 transition-colors duration-300 hover:bg-[#0A0F16]">
-              <p className="text-4xl font-bold tracking-[-0.05em] text-[#bc9851] md:text-5xl">
+            <div className="bg-white p-8 transition-colors duration-300 hover:bg-slate-50">
+              <p className="text-4xl font-bold tracking-tight text-[#bc9851] md:text-5xl">
                 WEB
               </p>
-
-              <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.3em] text-gray-500 sm:text-[10px]">
+              <p className="mt-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
                 Digital Products
               </p>
             </div>
 
-            <div className="bg-[#080C12] p-7 transition-colors duration-300 hover:bg-[#0A0F16]">
-              <p className="text-4xl font-bold tracking-[-0.05em] text-white md:text-5xl">
+            <div className="bg-white p-8 transition-colors duration-300 hover:bg-slate-50">
+              <p className="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
                 CODE
               </p>
-
-              <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.3em] text-gray-500 sm:text-[10px]">
+              <p className="mt-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
                 Development
               </p>
             </div>
-
           </div>
         </div>
 
         {/* =================================================
             FINAL CTA
         ================================================== */}
-
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#080C12] p-8 md:p-12 lg:p-16">
-
-          <div className="pointer-events-none absolute right-[-10%] top-[-50%] h-[400px] w-[400px] rounded-full bg-[#bc9851]/[0.05] blur-[100px]" />
-
-          <div className="relative z-10 grid grid-cols-1 items-end gap-10 lg:grid-cols-12">
-
+        <div className="relative overflow-hidden rounded-3xl bg-slate-900 p-10 md:p-16 shadow-2xl">
+          <div className="relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-8">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-[#bc9851]">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[#ffdc97]">
                 Next Project
               </p>
-
-              <h3 className="mt-5 max-w-3xl text-4xl font-bold leading-[1] tracking-[-0.05em] text-white md:text-6xl">
-                Have an idea?
-                <br />
-
-                <span className="text-[#bc9851]">
-                  Let's build it.
-                </span>
+              <h3 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-white md:text-5xl">
+                Have an idea? <br />
+                <span className="text-[#ffdc97]">Let's build it.</span>
               </h3>
             </div>
-
             <div className="lg:col-span-4 lg:text-right">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-4 rounded-full bg-[#bc9851] px-7 py-4 text-sm font-bold text-[#06090E] transition-all duration-300 hover:bg-[#d0b071] hover:shadow-xl hover:shadow-[#bc9851]/20"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-bold text-slate-900 transition-all duration-300 hover:scale-105 hover:bg-amber-50"
               >
                 Start a Project
               </a>
             </div>
-
           </div>
         </div>
+
       </div>
     </section>
   );

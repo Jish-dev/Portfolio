@@ -41,7 +41,7 @@ export default function Navbar() {
     };
   }, []);
 
-  // Close mobile menu when route changes
+
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
@@ -58,26 +58,25 @@ export default function Navbar() {
         duration-700
         ease-[cubic-bezier(0.16,1,0.3,1)]
 
-        ${
-          scrolled
-            ? `
+        ${scrolled
+          ? `
               top-4
               w-[90%]
               max-w-6xl
               rounded-full
               border
-              border-white/10
-              bg-neutral-950/75
-              shadow-[0_15px_50px_rgba(0,0,0,0.45)]
+              border-black/5
+              bg-white/85
+              shadow-[0_15px_50px_rgba(0,0,0,0.08)]
               backdrop-blur-xl
             `
-            : `
+          : `
               top-0
               w-full
               rounded-none
               border-transparent
-              bg-transparent
-              shadow-none
+              bg-gray-50
+              shadow-[0_10px_30px_rgba(0,0,0,0.08)]
               backdrop-blur-0
             `
         }
@@ -96,10 +95,9 @@ export default function Navbar() {
           duration-700
           ease-[cubic-bezier(0.16,1,0.3,1)]
 
-          ${scrolled ? "h-14" : "h-20"}
+          ${scrolled ? "h-14" : "h-18"}
         `}
       >
-        {/* LOGO */}
 
         <Link
           to="/"
@@ -111,7 +109,7 @@ export default function Navbar() {
             items-center
             font-black
             tracking-tight
-            text-white
+            text-slate-900
           "
         >
           {/* JISHNU DEV */}
@@ -126,14 +124,13 @@ export default function Navbar() {
               duration-700
               ease-[cubic-bezier(0.16,1,0.3,1)]
 
-              ${
-                scrolled
-                  ? "pointer-events-none absolute scale-75 opacity-0"
-                  : "scale-100 opacity-100"
+              ${scrolled
+                ? "pointer-events-none absolute scale-75 opacity-0"
+                : "scale-100 opacity-100"
               }
             `}
           >
-            <span className="text-3xl font-extrabold text-white">
+            <span className="text-3xl font-extrabold text-slate-900">
               Jishnu
             </span>
 
@@ -168,10 +165,9 @@ export default function Navbar() {
               duration-700
               ease-[cubic-bezier(0.16,1,0.3,1)]
 
-              ${
-                scrolled
-                  ? "scale-100 opacity-100"
-                  : "pointer-events-none scale-75 opacity-0"
+              ${scrolled
+                ? "scale-100 opacity-100"
+                : "pointer-events-none scale-75 opacity-0"
               }
             `}
           >
@@ -180,7 +176,7 @@ export default function Navbar() {
                 text-4xl
                 font-black
                 tracking-tighter
-                text-white
+                text-slate-900
               "
             >
               J
@@ -235,10 +231,9 @@ export default function Navbar() {
                     transition-all
                     duration-300
 
-                    ${
-                      isActive
-                        ? "bg-[#bc9851]/10 text-[#bc9851]"
-                        : "text-neutral-300 hover:bg-white/5 hover:text-white"
+                    ${isActive
+                      ? "bg-[#bc9851]/10 text-[#bc9851]"
+                      : "text-slate-600 hover:bg-black/5 hover:text-slate-900"
                     }
                   `}
                 >
@@ -254,7 +249,7 @@ export default function Navbar() {
                         w-1
                         -translate-x-1/2
                         rounded-full
-                        bg-white
+                        bg-slate-900
                       "
                     />
                   )}
@@ -274,10 +269,10 @@ export default function Navbar() {
               justify-center
               rounded-full
               border
-              border-white
+              border-slate-900
               bg-transparent
               font-semibold
-              text-white
+              text-slate-900
 
               transition-all
               duration-500
@@ -285,16 +280,15 @@ export default function Navbar() {
 
               hover:border-[#bc9851]
               hover:bg-[#bc9851]
-              hover:text-neutral-950
+              hover:text-white
 
-              hover:shadow-[0_0_25px_rgba(52,211,153,0.18)]
+              hover:shadow-[0_5px_15px_rgba(188,152,81,0.25)]
 
               active:scale-95
 
-              ${
-                scrolled
-                  ? "px-4 py-1.5 text-xs"
-                  : "px-5 py-2.5 text-sm"
+              ${scrolled
+                ? "px-4 py-1.5 text-xs"
+                : "px-5 py-2.5 text-sm"
               }
             `}
           >
@@ -338,12 +332,12 @@ export default function Navbar() {
             justify-center
             rounded-full
             border
-            border-white/10
-            bg-white/5
+            border-black/5
+            bg-black/5
             transition-all
             duration-300
             hover:border-[#bc9851]/30
-            hover:bg-white/10
+            hover:bg-black/10
             md:hidden
           "
         >
@@ -365,10 +359,9 @@ export default function Navbar() {
                 bg-[#bc9851]
                 transition-all
                 duration-500
-                ${
-                  menuOpen
-                    ? "translate-y-2 rotate-45"
-                    : ""
+                ${menuOpen
+                  ? "translate-y-2 rotate-45"
+                  : ""
                 }
               `}
             />
@@ -378,13 +371,12 @@ export default function Navbar() {
                 h-0.5
                 w-full
                 rounded-full
-                bg-white
+                bg-slate-900
                 transition-all
                 duration-300
-                ${
-                  menuOpen
-                    ? "scale-x-0 opacity-0"
-                    : "scale-x-100 opacity-100"
+                ${menuOpen
+                  ? "scale-x-0 opacity-0"
+                  : "scale-x-100 opacity-100"
                 }
               `}
             />
@@ -397,10 +389,9 @@ export default function Navbar() {
                 bg-[#bc9851]
                 transition-all
                 duration-500
-                ${
-                  menuOpen
-                    ? "-translate-y-2 -rotate-45"
-                    : ""
+                ${menuOpen
+                  ? "-translate-y-2 -rotate-45"
+                  : ""
                 }
               `}
             />
@@ -417,10 +408,9 @@ export default function Navbar() {
           duration-500
           md:hidden
 
-          ${
-            menuOpen
-              ? "grid-rows-[1fr] opacity-100"
-              : "pointer-events-none grid-rows-[0fr] opacity-0"
+          ${menuOpen
+            ? "grid-rows-[1fr] opacity-100"
+            : "pointer-events-none grid-rows-[0fr] opacity-0"
           }
         `}
       >
@@ -433,7 +423,7 @@ export default function Navbar() {
               rounded-3xl
               border
               border-[#bc9851]/20
-              bg-neutral-950/95
+              bg-white/95
               px-6
               py-6
               shadow-2xl
@@ -459,10 +449,9 @@ export default function Navbar() {
                       transition-all
                       duration-300
 
-                      ${
-                        isActive
-                          ? "bg-emerald-400/10 text-[#bc9851]"
-                          : "text-neutral-200 hover:bg-emerald-400/10 hover:text-[#bc9851]"
+                      ${isActive
+                        ? "bg-[#bc9851]/10 text-[#bc9851]"
+                        : "text-slate-600 hover:bg-[#bc9851]/10 hover:text-[#bc9851]"
                       }
                     `}
                   >
@@ -481,17 +470,17 @@ export default function Navbar() {
                 w-full
                 rounded-full
                 border
-                border-white
+                border-slate-900
                 bg-transparent
                 py-3.5
                 text-center
                 font-semibold
-                text-white
+                text-slate-900
                 transition-all
                 duration-300
                 hover:border-[#bc9851]
                 hover:bg-[#bc9851]
-                hover:text-neutral-950
+                hover:text-white
                 active:scale-95
               "
             >
