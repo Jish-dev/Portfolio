@@ -979,7 +979,7 @@ export default function Home() {
 
       ====================================================== */}
 
-      <style jsx>{`
+      <style >{`
 
         .hero-text {
 
